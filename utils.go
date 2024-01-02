@@ -8,7 +8,7 @@ import (
 )
 
 func generateURLID(longURL string) string {
-	uniqueID := generateRandomString(8)
+	uniqueID := generateRandomString(6)
 	hashedURL := hashSHA256(longURL)[:6]
 	return hashedURL + uniqueID
 }

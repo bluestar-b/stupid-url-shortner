@@ -25,7 +25,7 @@ func addURL(c *gin.Context) {
 	db[urlID] = URLInfo{LongURL: longURL, UserAgent: c.GetHeader("User-Agent"), CreatedAt: createdAt}
 	mutex.Unlock()
 
-	c.JSON(http.StatusOK, gin.H{"urlID": urlID, "createdAt": createdAt})
+	c.JSON(http.StatusOK, gin.H{"ID": urlID, "createdAt": createdAt})
 
 	saveDataToJSONFile()
 }
